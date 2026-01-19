@@ -2,95 +2,140 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Futuristic Weather App Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
+    /* Core backgrounds */
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    /* Card surfaces with glassmorphism */
+    --card: 222 47% 15%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    /* Glassmorphism effect colors */
+    --glass: 222 47% 20%;
+    --glass-border: 217 91% 60%;
+
+    --popover: 222 47% 13%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary - Electric cyan */
+    --primary: 190 95% 55%;
+    --primary-foreground: 222 47% 5%;
+    --primary-glow: 190 100% 50%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    /* Secondary - Deep purple accent */
+    --secondary: 260 60% 45%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted elements */
+    --muted: 217 33% 25%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent - Warm amber for highlights */
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 5%;
 
-    --destructive: 0 62.8% 30.6%;
+    /* Destructive - For alerts */
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    /* AQI Color Scale */
+    --aqi-good: 142 76% 45%;
+    --aqi-moderate: 45 93% 47%;
+    --aqi-unhealthy-sensitive: 27 96% 61%;
+    --aqi-unhealthy: 0 84% 60%;
+    --aqi-very-unhealthy: 280 60% 45%;
+    --aqi-hazardous: 345 83% 35%;
+
+    /* Weather condition colors */
+    --weather-sunny: 45 100% 60%;
+    --weather-cloudy: 220 20% 60%;
+    --weather-rainy: 200 80% 50%;
+    --weather-stormy: 260 50% 40%;
+
+    /* UI elements */
+    --border: 217 33% 30%;
+    --input: 217 33% 20%;
+    --ring: 190 95% 55%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-sky-day: linear-gradient(180deg, hsl(210 100% 25%) 0%, hsl(200 80% 40%) 50%, hsl(38 70% 55%) 100%);
+    --gradient-sky-night: linear-gradient(180deg, hsl(222 60% 8%) 0%, hsl(240 50% 15%) 50%, hsl(260 40% 20%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(0 0% 100% / 0.1) 0%, hsla(0 0% 100% / 0.05) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.3) 0%, transparent 70%);
+    --gradient-card: linear-gradient(135deg, hsla(var(--glass) / 0.8) 0%, hsla(var(--glass) / 0.4) 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 8px 32px hsla(0 0% 0% / 0.3);
+    --shadow-soft: 0 4px 16px hsla(0 0% 0% / 0.2);
+
+    /* Sidebar (inherited) */
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 240 5% 65%;
+    --sidebar-primary: 190 95% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 240 5% 95%;
+    --sidebar-border: 217 33% 25%;
+    --sidebar-ring: 190 95% 55%;
+  }
+
+  .light {
+    --background: 210 40% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --glass: 0 0% 100%;
+    --glass-border: 217 60% 70%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 200 80% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 200 90% 50%;
+
+    --secondary: 260 50% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 90%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 85%;
+    --input: 214 32% 91%;
+    --ring: 200 80% 45%;
+
+    --gradient-sky-day: linear-gradient(180deg, hsl(200 85% 65%) 0%, hsl(195 75% 75%) 50%, hsl(45 80% 85%) 100%);
+    --gradient-sky-night: linear-gradient(180deg, hsl(222 60% 25%) 0%, hsl(240 50% 35%) 50%, hsl(260 40% 40%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(0 0% 100% / 0.9) 0%, hsla(0 0% 100% / 0.7) 100%);
+    --gradient-card: linear-gradient(135deg, hsla(0 0% 100% / 0.9) 0%, hsla(0 0% 100% / 0.7) 100%);
+
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 8px 32px hsla(0 0% 0% / 0.1);
+    --shadow-soft: 0 4px 16px hsla(0 0% 0% / 0.08);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 200 80% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 240 6% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 200 80% 45%;
   }
 }
 
@@ -100,6 +145,176 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl border border-white/10 backdrop-blur-xl;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-50;
+    background: var(--gradient-glass);
+    pointer-events: none;
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  /* AQI indicators */
+  .aqi-good {
+    @apply bg-[hsl(var(--aqi-good))];
+  }
+  .aqi-moderate {
+    @apply bg-[hsl(var(--aqi-moderate))];
+  }
+  .aqi-unhealthy-sensitive {
+    @apply bg-[hsl(var(--aqi-unhealthy-sensitive))];
+  }
+  .aqi-unhealthy {
+    @apply bg-[hsl(var(--aqi-unhealthy))];
+  }
+  .aqi-very-unhealthy {
+    @apply bg-[hsl(var(--aqi-very-unhealthy))];
+  }
+  .aqi-hazardous {
+    @apply bg-[hsl(var(--aqi-hazardous))];
+  }
+
+  /* Animated background */
+  .animated-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .animated-bg::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: var(--gradient-sky-night);
+    animation: aurora 20s ease-in-out infinite;
+  }
+
+  .light .animated-bg::before {
+    background: var(--gradient-sky-day);
+  }
+
+  /* Floating orbs */
+  .orb {
+    @apply absolute rounded-full blur-3xl opacity-30;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .orb-1 {
+    @apply w-96 h-96 bg-primary top-0 -left-48;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    @apply w-80 h-80 bg-secondary bottom-0 right-0;
+    animation-delay: -4s;
+  }
+
+  .orb-3 {
+    @apply w-64 h-64 bg-accent top-1/2 left-1/2;
+    animation-delay: -2s;
+  }
+}
+
+@layer utilities {
+  /* Weather icon pulse */
+  .weather-pulse {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Skeleton loading */
+  .skeleton-shimmer {
+    @apply relative overflow-hidden bg-muted;
+  }
+
+  .skeleton-shimmer::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Fade in animation */
+  .fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+
+  /* Stagger children */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+}
+
+@keyframes aurora {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px hsl(var(--primary) / 0.8));
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
