@@ -198,22 +198,30 @@ npm run type-check
 <div align="center">
 
 ### 🌤️ Main Weather View
-<img width="1436" height="890" alt="image" src="https://github.com/user-attachments/assets/bca53425-0afe-46c1-9970-8e0c59154c31" />
+
+<img width="1436" alt="Main Weather View" src="https://github.com/user-attachments/assets/bca53425-0afe-46c1-9970-8e0c59154c31" />
 
 *Beautiful gradient interface with real-time weather data*
 
+<br/>
+
 ### 🌡️ Air Quality Dashboard
-<img width="709" height="714" alt="image" src="https://github.com/user-attachments/assets/3fd36f2a-b122-4583-a5e2-3d734875ae85" />
+
+<img width="709" alt="Air Quality Dashboard" src="https://github.com/user-attachments/assets/3fd36f2a-b122-4583-a5e2-3d734875ae85" />
 
 *Comprehensive air quality monitoring with health alerts*
 
+<br/>
+
 ### 📅 5-Day Forecast
-<img width="719" height="724" alt="image" src="https://github.com/user-attachments/assets/df37906c-277a-4723-9348-35734da2baff" />
+
+<img width="719" alt="5-Day Forecast" src="https://github.com/user-attachments/assets/df37906c-277a-4723-9348-35734da2baff" />
 
 *Plan ahead with detailed daily predictions*
 
 </div>
 
+---
 
 ## 🌟 Why WeatherLens?
 
